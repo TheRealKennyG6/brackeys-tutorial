@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://brgp3o5oqqum0"]
+[gd_scene load_steps=19 format=4 uid="uid://brgp3o5oqqum0"]
 
 [ext_resource type="Texture2D" uid="uid://cedf7hwv11iom" path="res://assets/sprites/world_tileset.png" id="1_4xdfw"]
 [ext_resource type="PackedScene" uid="uid://d3pwjkxx4lc77" path="res://scenes/player.tscn" id="1_sciq2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ckrh2vy0dcwxo" path="res://scenes/killzone.tscn" id="5_uwupt"]
 [ext_resource type="PackedScene" uid="uid://k2ljui71h1d4" path="res://scenes/slime.tscn" id="6_7d1i4"]
 [ext_resource type="FontFile" uid="uid://ob421qbaprm7" path="res://assets/fonts/PixelOperator8.ttf" id="7_hri17"]
+[ext_resource type="PackedScene" uid="uid://dvgq3jdqoq3a8" path="res://scenes/world_boundary.tscn" id="10_oyj2c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2dtxb"]
 texture = ExtResource("1_4xdfw")
@@ -479,3 +480,16 @@ theme_override_colors/font_color = Color(0.0784314, 0.596078, 0.862745, 1)
 theme_override_fonts/font = ExtResource("7_hri17")
 theme_override_font_sizes/font_size = 8
 text = "You made it!"
+
+[node name="Boundaries" type="Node" parent="."]
+
+[node name="LeftWorldBoundary" parent="Boundaries" instance=ExtResource("10_oyj2c")]
+position = Vector2(-184, 0)
+
+[node name="RightWorldBoundary" parent="Boundaries" instance=ExtResource("10_oyj2c")]
+position = Vector2(994, 0)
+rotation = -3.14159
+
+[node name="UpperWorldBoundary" parent="Boundaries" instance=ExtResource("10_oyj2c")]
+position = Vector2(459, -234)
+rotation = 1.5708
